@@ -12,9 +12,9 @@ It is a fork of [gatsby-plugin-elasticlunr-search](https://github.com/andrew-cod
 
 # Getting Started
 
-Install the plugin via `npm install --save @gatsby-contrib/gatsby-plugin-elasticlunr-search`.
+Install the plugin via `npm install --save @alexeiaccio/gatsby-plugin-elasticlunr-search`.
 
-See the [example site](https://gatsby-contrib.github.io/gatsby-plugin-elasticlunr-search/) [code](./example) for more specific implementation details.
+See the [example site](https://alexeiaccio.github.io/gatsby-plugin-elasticlunr-search/) [code](./example) for more specific implementation details.
 
 Next, update your `gatsby-config.js` file to utilize the plugin.
 
@@ -28,7 +28,7 @@ Here's an example for a site that create pages using markdown, in which you you'
 module.exports = {
   plugins: [
     {
-      resolve: `@gatsby-contrib/gatsby-plugin-elasticlunr-search`,
+      resolve: `@alexeiaccio/gatsby-plugin-elasticlunr-search`,
       options: {
         // Fields to index
         fields: [`title`, `tags`],
@@ -204,4 +204,4 @@ resolvers : {
   }
 }
 ```
-Now you can use the `featuredImage` data of `BlogPost` model without including all `Asset` models in the `elasticlunr` index [(see PR #3 for more details)](https://github.com/gatsby-contrib/gatsby-plugin-elasticlunr-search/pull/3).
+Now you can use the `featuredImage` data of `BlogPost` model without including all `Asset` models in the `elasticlunr` index [(see PR #3 for more details)](https://github.com/alexeiaccio/gatsby-plugin-elasticlunr-search/pull/3).

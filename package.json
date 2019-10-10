@@ -1,6 +1,6 @@
 {
   "name": "@alexeiaccio/gatsby-plugin-elasticlunr-search",
-  "version": "2.3.2",
+  "version": "2.3.3",
   "description": "Search for gatsby; implemented via elasticlunr.",
   "main": "n/a",
   "scripts": {
@@ -9,7 +9,7 @@
     "default": "npm run build:watch",
     "lint": "eslint ./src",
     "format": "prettier-eslint --write '**/*.{js,md,json}'",
-    "prepublish": "npm run build",
+    "prepare": "npm run build",
     "publish": "npm run lint && npm publish --access=public",
     "test": "echo 'Error: no test specified' && exit 1"
   },
