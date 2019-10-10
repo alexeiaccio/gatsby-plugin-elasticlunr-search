@@ -12,3 +12,4 @@ example/.cache/
 .idea/
 *.sublime*
 *.sh
+.npmrc

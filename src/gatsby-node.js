@@ -57,20 +57,22 @@ const createOrGetIndex = async (
   for (const pageId of node.pages) {
     const pageNode = getNode(pageId)
 
-    const fieldResolvers = resolvers[pageNode.internal.type]
-    if (fieldResolvers) {
-      const doc = {
-        id: pageNode.id,
-        date: pageNode.date,
-        ...Object.keys(fieldResolvers).reduce((prev, key) => {
-          return {
-            ...prev,
-            [key]: fieldResolvers[key](pageNode, getNode),
-          }
-        }, {}),
+    if (pageNode && pageNode.internal && pageNode.internal.type) {
+      const fieldResolvers = resolvers[pageNode.internal.type]
+      if (fieldResolvers) {
+        const doc = {
+          id: pageNode.id,
+          date: pageNode.date,
+          ...Object.keys(fieldResolvers).reduce((prev, key) => {
+            return {
+              ...prev,
+              [key]: fieldResolvers[key](pageNode, getNode),
+            }
+          }, {}),
+        }
+  
+        index.addDoc(doc)
       }
-
-      index.addDoc(doc)
     }
   }
 
